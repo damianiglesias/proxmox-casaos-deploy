@@ -34,16 +34,24 @@ echo -e "${YELLOW}📦 Step 1: Updating System...${NC}"
 apt-get update && apt-get upgrade -y
 echo -e "${GREEN}✅ System Updated.${NC}"
 
+    
 # 3. installation utils 
 echo -e "${YELLOW}🛠️ Step 2: Installing Utils (htop, neofetch, git)...${NC}"
-apt-get update > /dev/null 2>&1
-apt-get install curl wget git htop neofetch -y
-if command -v neofetch &> /dev/null; then
-    echo -e "${GREEN}✅ Utils installed.${NC}"
-else
-    echo -e "${YELLOW}⚠️  Retrying neofetch installation...${NC}"
+for i in {1..3}; do
+    echo "   Attempt $i to update and install..."
+    apt-get update > /dev/null 2>&1
+    apt-get install curl wget git htop neofetch -y && break || sleep 5
+done
+if ! command -v neofetch &> /dev/null; then
+    echo -e "${RED}❌ FATAL ERROR: neofetch could not be installed.${NC}"
+    echo -e "${YELLOW}   Trying to show the real error now:${NC}"
     apt-get install neofetch -y
+    exit 1
+else
+    echo -e "${GREEN}✅ Utils installed and verified.${NC}"
 fi
+
+  
 
 # 4. casaos install
 echo -e "${YELLOW}🏠 Step 3: Installing CasaOS...${NC}"
