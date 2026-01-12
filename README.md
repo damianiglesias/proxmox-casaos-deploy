@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/IceWhaleTech/logo/main/casaos/casaos_banner_dark_night_800x300.png" width="200">
+  <img src="https://raw.githubusercontent.com/IceWhaleTech/logo/main/casaos/casaos_banner_dark_night_800x300.png" width="500">
 </p>
 # proxmox-casaos-deploy
 A Bash script to automate the transformation of a raw Proxmox LXC container into a full-featured Home Media Server using CasaOS.
