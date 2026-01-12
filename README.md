@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="casaos_logo.png" width="200">
+</p>
 # proxmox-casaos-deploy
 A Bash script to automate the transformation of a raw Proxmox LXC container into a full-featured Home Media Server using CasaOS.
 ##  Features (At the moment)
