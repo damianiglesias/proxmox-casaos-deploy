@@ -36,21 +36,15 @@ echo -e "${GREEN}✅ System Updated.${NC}"
 
     
 # 3. installation utils 
-echo -e "${YELLOW}🛠️ Step 2: Installing Utils (htop, neofetch, git)...${NC}"
-for i in {1..3}; do
-    echo "   Attempt $i to update and install..."
-    apt-get update > /dev/null 2>&1
-    apt-get install curl wget git htop neofetch -y && break || sleep 5
-done
-if ! command -v neofetch &> /dev/null; then
-    echo -e "${RED}❌ FATAL ERROR: neofetch could not be installed.${NC}"
-    echo -e "${YELLOW}   Trying to show the real error now:${NC}"
-    apt-get install neofetch -y
-    exit 1
+echo -e "${YELLOW}🛠️ Step 2: Installing Utils (htop, fastfetch, git)...${NC}"
+apt-get update > /dev/null 2>&1
+apt-get install curl wget git htop fastfetch -y
+if command -v fastfetch &> /dev/null; then
+    echo -e "${GREEN}✅ Utils installed (using fastfetch).${NC}"
 else
-    echo -e "${GREEN}✅ Utils installed and verified.${NC}"
+    echo -e "${RED}❌ Error: Tools could not be installed.${NC}"
+    exit 1
 fi
-
   
 
 # 4. casaos install
@@ -75,3 +69,4 @@ echo ""
 echo -e "   Access your Dashboard at:"
 echo -e "   👉 http://$IP_ADDRESS"
 echo ""
+
