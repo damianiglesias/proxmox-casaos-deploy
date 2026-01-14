@@ -3,7 +3,7 @@
 A Bash script to automate the transformation of a raw Proxmox LXC container into a full-featured Home Media Server using CasaOS.
 ##  Features (At the moment)
 *   **System Update:** Auto-updates Debian/Ubuntu repositories.
-*   **Tools:** Installs `curl`, `wget`, `htop`, `neofetch`.
+*   **Tools:** Installs `curl`, `wget`, `htop`, `fastfetch`.
 *   **CasaOS:** Installs the core OS using the official raw source.
 *   **Media Ready:** Automatically creates the directory structure for **Jellyfin/Plex** (`/DATA/Media/Movies`, etc.) and sets permissions to avoid Docker issues
     ##  Usage
