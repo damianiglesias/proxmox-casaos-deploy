@@ -9,4 +9,5 @@ A Bash script to automate the transformation of a raw Proxmox LXC container into
     ##  Usage
     ## Run this inside your fresh Proxmox LXC container:
     * wget https://raw.githubusercontent.com/damianiglesias/proxmox-casaos-deploy/main/setup_home_server.sh
+    * Or: git clone https://github.com/damianiglesias/proxmox-casaos-deploy
     * ./setup_home_server.sh
